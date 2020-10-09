@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\tlet firstName = \"\";\n\tlet lastName = \"\";\n\tlet src = \"favicon.png\"\n\n\t$: fullName = `${firstName} ${lastName}`\n\t$: {\n\t\tconsole.log(lastName);\n\t\tconsole.log(firstName);\n\t}\n\n</script>\n\n<main>\n\t<h1>Hello {fullName}</h1>\n\n\t<label for=\"firstname\">FirstName</label>\n\t<input type=\"text\" bind:value={firstName}>\n\t<label for=\"firstname\">LastName</label>\n\t<input type=\"text\" bind:value={lastName}>\n\n\t\n\t<img {src} alt=\"Svelte logo\">\n</main>\n\n<style>\n\tmain {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t}\n\th1 {\n\t\tfont-size: 72px;\n\t\ttext-align: center;\n\t}\n\n\th3 {\n\t\tfont-size: 38px;\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AA0BC,IAAI,eAAC,CAAC,AACL,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,AACpB,CAAC,AACD,EAAE,eAAC,CAAC,AACH,SAAS,CAAE,IAAI,CACf,UAAU,CAAE,MAAM,AACnB,CAAC"
+}
