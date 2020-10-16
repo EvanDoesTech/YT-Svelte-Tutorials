@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "Announcement.svelte",
+    "App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\r\n    let show = true;\r\n\r\n    const hideAlert = () => {\r\n        show = false;\r\n    }\r\n</script>\r\n\r\n{#if show}\r\n    <div class=\"alert\">\r\n        50% off all fruit. Sign up for more fruit!\r\n        <button on:click={hideAlert}>Hide</button>\r\n    </div>\r\n{/if}\r\n\r\n<style>\r\n\t.alert {\r\n        padding: 8px;\r\n        font-size: 18px;\r\n        background-color: darkseagreen;\r\n        color: darkslategray;\r\n    }\r\n</style>",
+    "<script>\n\timport Announcement from \"./Announcement.svelte\";\n\n\n\tlet fruits = [\n\t\t{name: \"Apple\", color: \"red\", amount: 5, id: 1},\n\t\t{name: \"Banana\", color: \"yellow\", amount: 7, id: 2},\n\t\t{name: \"Grape\", color: \"purple\", amount: 3, id: 3}\n\t];\n\n\tconst deleteFruit = (id) => {\n\t\tfruits = fruits.filter((fruit) => fruit.id != id) \n\t\t// True: Keep it in our array\n\t\t// False: Remove it from our array\n\t\tconsole.log(fruits);\n\t}\n\n</script>\n\n<main>\n\t<Announcement />\n\t<div class=\"alert\">\n\t\tThis is our alert in our main app\n\t</div>\n\t{#each fruits as fruit (fruit.id)}\n\t\t{#if fruit.amount < 4}\n\t\t\t<div class=\"card\">\n\t\t\t\t<h5>{fruit.name}</h5>\n\t\t\t\t<p>{fruit.color}</p>\n\t\t\t\t<button on:click={() => deleteFruit(fruit.id)}>Delete</button>\n\t\t\t</div>\n\t\t{:else}\n\t\t\t<p>The amount for {fruit.name} is greater than or equal to 4</p>\n\t\t{/if}\n\t{:else}\n\t\t<p>There is no fruit in our fruit array</p>\n\t{/each}\n</main>\n\n<style>\n\th5, p {\n\t\tmargin: 4px 0px;\n\t}\n\t.card {\n\t\tmin-width: 400px;\n\t\tpadding: 8px;\n\t\tborder-radius: 20px;\n\t\tborder: 2px solid gray;\n\t\tmargin-top: 8px;\n\t}\n\tmain {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t}\n\th1 {\n\t\tfont-size: 72px;\n\t\ttext-align: center;\n\t}\n\n\th3 {\n\t\tfont-size: 38px;\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAgBC,MAAM,eAAC,CAAC,AACD,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,IAAI,CACf,gBAAgB,CAAE,YAAY,CAC9B,KAAK,CAAE,aAAa,AACxB,CAAC;ACmBJ,gBAAE,CAAE,CAAC,cAAC,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,GAAG,AAChB,CAAC,AACD,KAAK,cAAC,CAAC,AACN,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,GAAG,CACZ,aAAa,CAAE,IAAI,CACnB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,UAAU,CAAE,GAAG,AAChB,CAAC,AACD,IAAI,cAAC,CAAC,AACL,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,AACpB,CAAC"
+}
