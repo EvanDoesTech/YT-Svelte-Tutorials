@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "Announcement.svelte",
+    "App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\r\n    let show = true;\r\n\r\n    const hideAlert = () => {\r\n        show = false;\r\n    }\r\n</script>\r\n\r\n{#if show}\r\n    <div class=\"alert\">\r\n        50% off all fruit. Sign up for more fruit!\r\n        <button on:click={hideAlert}>Hide</button>\r\n    </div>\r\n{/if}\r\n\r\n<style>\r\n\t.alert {\r\n        display: flex;\r\n        align-items: center;\r\n        padding: 2px 12px;\r\n        margin: 12px 0;\r\n        border: 2px solid darkslategrey;\r\n        border-radius: 10px;\r\n        font-size: 18px;\r\n        background-color: darkseagreen;\r\n        color: darkslategray;\r\n    }\r\n</style>",
+    "<script>\n\timport Button from \"./Button.svelte\";\n</script>\n\n<main>\n\t<Button  />\n</main>\n\n<style>\n\tmain {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAgBC,MAAM,cAAC,CAAC,AACD,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,GAAG,CAAC,IAAI,CACjB,MAAM,CAAE,IAAI,CAAC,CAAC,CACd,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,aAAa,CAC/B,aAAa,CAAE,IAAI,CACnB,SAAS,CAAE,IAAI,CACf,gBAAgB,CAAE,YAAY,CAC9B,KAAK,CAAE,aAAa,AACxB,CAAC;ACjBJ,IAAI,cAAC,CAAC,AACL,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,AACpB,CAAC"
+}
