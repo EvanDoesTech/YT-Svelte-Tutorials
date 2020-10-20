@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte",
+    "Button.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport Button from \"./Button.svelte\";\n\n\tconst log = () => {\n\t\tconsole.log(\"Button clicked\")\n\t}\n</script>\n\n<main>\n\t<Button on:click={log} />\n\t<button on:click={log}>App button</button>\n</main>\n\n<style>\n\tmain {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t}\n</style>",
+    "<script>\r\n    export let btnText = \"Component Button\";\r\n</script>\r\n<div on:click>\r\n    <span>Click to log</span>\r\n    <button>{btnText}</button>\r\n</div>\r\n\r\n<style>\r\n    button {\r\n        background: #667eea;\r\n        border: 1px solid #4c51bf;\r\n        color: #fff;\r\n    }\r\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAcC,IAAI,cAAC,CAAC,AACL,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,AACpB,CAAC;ACTE,MAAM,eAAC,CAAC,AACJ,UAAU,CAAE,OAAO,CACnB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,KAAK,CAAE,IAAI,AACf,CAAC"
+}
