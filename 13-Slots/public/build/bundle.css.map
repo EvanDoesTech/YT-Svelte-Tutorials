@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte",
+    "Button.svelte",
+    "Card.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\timport Card from \"./Card.svelte\"\n</script>\n\n<main>\n\t<Card>\n\t\t<h3>Card</h3>\n\t\t<p>This is our card</p>\n\t\t\n\t\t<button slot=\"button\">Test button</button>\n\n\t\t<div>\n\t\t\t<h4>This is below everything</h4>\n\t\t</div>\n\t</Card>\n</main>\n\n<style>\n\tmain {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t}\n</style>",
+    "<script>\r\n    export let btnText = \"Component Button\";\r\n</script>\r\n<div class=\"card\">\r\n    <button on:click|once>{btnText}</button>\r\n</div>\r\n\r\n<style>\r\n    button {\r\n        background: #667eea;\r\n        border: 1px solid #4c51bf;\r\n        color: #fff;\r\n    }\r\n    .card {\r\n        padding: 12px;\r\n        border: 2px solid gray;\r\n        margin-bottom: 8px;\r\n    }\r\n</style>",
+    "<script>\r\n\r\n</script>\r\n\r\n<div class=\"card\">\r\n    <slot></slot>\r\n    <slot name=\"button\"></slot>\r\n</div>\r\n\r\n<style>\r\n    .card {\r\n        padding: 12px;\r\n        border: 2px solid gray;\r\n        margin-bottom: 8px;\r\n    }\r\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAkBC,IAAI,cAAC,CAAC,AACL,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,AACpB,CAAC;ACdE,MAAM,cAAC,CAAC,AACJ,UAAU,CAAE,OAAO,CACnB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CACzB,KAAK,CAAE,IAAI,AACf,CAAC,AACD,KAAK,cAAC,CAAC,AACH,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,aAAa,CAAE,GAAG,AACtB,CAAC;ACPD,KAAK,cAAC,CAAC,AACH,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,aAAa,CAAE,GAAG,AACtB,CAAC"
+}
