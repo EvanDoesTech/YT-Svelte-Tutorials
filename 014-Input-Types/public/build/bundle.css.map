@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "App.svelte",
+    "Card.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\tlet name;\n\tlet num;\n\tlet isChecked = true;\n\tlet value = 2;\n\tlet selected;\n\n\tlet questions = [\n\t\t{id: 1, text: \"What is your favorite color?\"},\n\t\t{id: 2, text: \"What is your favorite fruit?\"}\n\t]\n</script>\n\n<main>\n\t<input type=\"text\" bind:value={name}>\n\t<input type=\"number\" bind:value={num}>\n\t<input type=\"checkbox\" bind:checked={isChecked}>\n\n\t<label>\n\t\t<input type=\"radio\" bind:group={value} value={1}>\n\t\t1\n\t</label>\n\t<label>\n\t\t<input type=\"radio\" bind:group={value} value={2}>\n\t\t2\n\t</label>\n\t<label>\n\t\t<input type=\"radio\" bind:group={value} value={3}>\n\t\t3\n\t</label>\n\n\t<select bind:value={selected}>\n\t\t{#each questions as question}\n\t\t\t<option value={question}>\n\t\t\t\t{question.text}\n\t\t\t</option>\n\t\t{/each}\n\t</select>\n</main>\n\n<style>\n\tmain {\n\t\tdisplay: flex;\n\t\tflex-direction: column;\n\t\talign-items: center;\n\t}\n</style>",
+    "<script>\r\n\r\n</script>\r\n\r\n<div class=\"card\">\r\n    <slot></slot>\r\n    <slot name=\"button\"></slot>\r\n</div>\r\n\r\n<style>\r\n    .card {\r\n        padding: 12px;\r\n        border: 2px solid gray;\r\n        margin-bottom: 8px;\r\n    }\r\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAyCC,IAAI,cAAC,CAAC,AACL,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,WAAW,CAAE,MAAM,AACpB,CAAC;ACnCE,KAAK,cAAC,CAAC,AACH,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,CACtB,aAAa,CAAE,GAAG,AACtB,CAAC"
+}
